@@ -1,0 +1,10 @@
+
+.WeatherDataContainer {
+    display: flex;
+}
+
+.WeatherContainer {
+    background: var(--weather-data-bg);
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+}

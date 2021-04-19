@@ -1,0 +1,27 @@
+/* color variables */
+body {
+  --aside-background: var(--blanco);
+  --aside-text: var(--negro);
+  --aside-text-active: var(--color-principal);
+  --aside-item-active-background: var(--gris4);
+  --cerrar-sesion: var(--rosa);
+  --main-background: var(--blanco);
+  --weather-data-bg: var(--blanco);
+  --titles-color: var(--azul);
+  --button-principal: var(--success);
+  --table-header-text: var(--negro);
+  --input-border: var(--gris);
+  --arrow: var(--gris5);
+  --select-selected: var(--gris5);
+  --user-icon-background: var(--gris8);
+  --background-color-login: var(--loginBackground);    
+  --body-bg: var(--gris);
+
+  --azul: #01A3FF;
+  --blanco: #fff;
+  --negro: #333;
+  --gris: #F5F6FA;
+  --gris2:rgb(151, 151, 151);
+  --rosa: rgb(245, 19, 141);
+
+}

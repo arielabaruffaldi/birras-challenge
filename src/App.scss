@@ -1,0 +1,34 @@
+@import "./utils/styles/font.scss";
+
+body {
+  margin: 0;
+  font-family: $font;
+  background: var(--body-bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-principal);
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 720px) {
+  body {
+    min-width: unset;
+    /* height: 100vw; */
+    /* position: fixed; */
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}

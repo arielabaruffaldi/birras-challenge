@@ -1,0 +1,13 @@
+@import "./../../utils/styles/animations.scss";
+
+.Main {
+  -webkit-animation: fadeIn 0.5s ease;
+  animation: fadeIn 0.5s ease;
+  box-sizing: border-box;
+  flex: 1 1 83%;
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  position: relative;
+  margin: 5vh 1rem;
+}

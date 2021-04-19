@@ -1,0 +1,19 @@
+.Temperature {
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 0;
+    line-height: 1;
+}
+
+.ExtraInfo {
+    p {
+        margin: .5rem 0;
+    }
+    .Wind {
+        p {
+            color: var(--gris2);
+            font-weight: 500;
+            font-size: .8rem;
+        }
+    }
+}
