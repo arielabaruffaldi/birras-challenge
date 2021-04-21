@@ -63,7 +63,7 @@ const MeetModal = () => {
                         onChange={date => setDate(date)}
                         date={date}
                         dateFormat="dd/MM/yyyy"
-                        className={styles.Input}
+                        className={`${styles.Input} stylePicker`}
                         selected={date}
                     />
                     <div className={styles.HourWrapper}>

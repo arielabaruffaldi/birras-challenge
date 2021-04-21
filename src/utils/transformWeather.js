@@ -1,10 +1,10 @@
 import { WiDaySunny } from "react-icons/wi";
 import React from "react";
 
-const TransformedWeather = (api_data, width) => {
+const TransformedWeather = (api_data, width, color) => {
     switch (api_data) {
         case 'Clear':
-            return <WiDaySunny size={width} color="#01A3FF" />
+            return <WiDaySunny size={width} color={color} />
     }
 }
 

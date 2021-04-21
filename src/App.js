@@ -11,6 +11,7 @@ import Temperature from "./pages/Temperature/Temperature";
 import Main from "./components/Main/Main"
 import Meet from "./pages/Meet/Meet";
 import Proviciones from "./pages/Proviciones/Proviciones";
+import NavMobile from "./components/NavMobile/NavMobile";
 
 // TODO:
 //SACAR TODOS LOS CONNECT Y REEMPLAZARLOS POR HOOKS
@@ -26,8 +27,8 @@ function App() {
     <BrowserRouter>
       {isAuthenticated ? (
         <>
-          <Aside showMenu={true} />
-          <Main responsive={isMobile}>
+          {!isMobile ?  <Aside /> : <NavMobile></NavMobile>}  
+          <Main>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/clima" component={Temperature} />

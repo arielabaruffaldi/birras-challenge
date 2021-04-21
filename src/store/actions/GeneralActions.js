@@ -18,31 +18,20 @@ export const setLoading = (value) => {
 };
 
 export const loginRequest = payload => (dispatch) => {
-    if (payload.password === "santander") {
-        if (payload.email === "user@birras.com") {
-            localStorage.setItem("birras-auth", true);
-            localStorage.setItem("user-mail", payload.email);
-            dispatch({
-                type: actionTypes.LOGIN_REQUEST,
-                payload,
-            });
-            dispatch(getUserByMail(payload.email))
-        } else if (payload.email === "admin@birras.com") {
-            localStorage.setItem("birras-auth", true);
-            localStorage.setItem("user-mail", payload.email);
-            dispatch(getUserByMail(payload.email))
-            dispatch({
-                type: actionTypes.LOGIN_REQUEST,
-                payload,
-            });
-        } else {
-            dispatch(
-                setError({
-                    error: true,
-                    errorMessage: "Ocurrió un error, intentá nuevamente",
-                })
-            );
-        }
+    dispatch(setLoading(true))
+    const user = userData.filter(user => user.email === payload.email);
+    if (user.length && payload.password === "santander") {
+        localStorage.setItem("birras-auth", true);
+        localStorage.setItem("user-mail", payload.email);
+        setTimeout(() => {
+            dispatch(setLoading(false))
+        }, 1000)
+
+        dispatch({
+            type: actionTypes.LOGIN_REQUEST,
+            payload,
+        });
+        dispatch(getUserByMail(payload.email))
     } else {
         dispatch(
             setError({

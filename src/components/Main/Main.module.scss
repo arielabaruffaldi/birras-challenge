@@ -1,4 +1,5 @@
 @import "./../../utils/styles/animations.scss";
+@import "./../../utils/styles/media.scss";
 
 .Main {
   -webkit-animation: fadeIn 0.5s ease;
@@ -12,4 +13,7 @@
   margin: 8vh 1rem;
   padding: 0 1.5rem;
   overflow: visible;
+  @include respond(phone){
+    margin-top: 6rem;
+  }
 }

@@ -7,7 +7,6 @@ import Title from '../../components/UI/Title/Title';
 import Search from "./../../components/Search/Search"
 
 const Temperature = () => {
-
     const dispatch = useDispatch();
     const state = useSelector((state) => state.weather);
     useEffect(() => {
@@ -27,7 +26,6 @@ const Temperature = () => {
                         wind={state.weatherData.wind.speed}
                         min={state.weatherData.data.temp_min}
                         max={state.weatherData.data.temp_max}
-
                     />
                     {/* <button onClick= {this.handleUpdateClick}className="btn">Actualizar</button> */}
                 </div>

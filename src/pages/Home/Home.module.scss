@@ -1,0 +1,32 @@
+.Home {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+    column-gap: 2rem;
+    margin: 4rem 0;
+    padding-bottom: 3rem;
+    > div {
+        width: 100%;
+    }
+    &-WeatherInfo {
+        background-color: var(--color-principal);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        padding: 4rem 3rem;
+        border-radius: 20px;
+        width: 25%;
+    }
+    &-MeetCard {
+
+    }
+    > div {
+        display: flex;
+        .Home--Card {
+            min-width: 75%;
+            margin-left: 2rem;
+        }
+    }
+}

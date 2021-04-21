@@ -1,3 +1,6 @@
+@import "./../../utils/styles/media.scss";
+
+
 .Search {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 25px;
@@ -33,5 +36,8 @@
     ::placeholder {
         color: var(--gris2);
         font-family: var(--font);
+    }
+    @include respond(phone){
+        width: 100%;
     }
 }
