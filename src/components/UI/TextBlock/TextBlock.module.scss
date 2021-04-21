@@ -1,0 +1,23 @@
+.TextBlock {
+    margin: 1rem;
+    justify-content: space-between;
+    display: flex;
+    margin: 1.5rem 0rem;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        bottom: 0;
+        background: var(--azul);
+        border-radius: 50px;
+        clip-path: inset(0 65% 0 0 round 5px);
+    }
+    p {
+        margin: .5rem 0;
+    }
+    &--subtitle {
+        color: var(--titles-color);
+    }
+}

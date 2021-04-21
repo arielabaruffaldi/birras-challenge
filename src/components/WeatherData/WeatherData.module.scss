@@ -1,19 +1,26 @@
-.Temperature {
-    font-size: 3rem;
-    font-weight: 300;
-    margin: 0;
-    line-height: 1;
+.WeatherData {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    > div:not(:first-child) {
+        width: 20%;
+    }
 }
 
 .ExtraInfo {
     p {
-        margin: .5rem 0;
+        margin: 0.5rem 0;
     }
     .Wind {
         p {
             color: var(--gris2);
             font-weight: 500;
-            font-size: .8rem;
+            font-size: 0.8rem;
         }
     }
+}
+
+.TextBlock--container{
+    margin-right: 2rem;
 }

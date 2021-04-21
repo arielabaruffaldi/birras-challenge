@@ -1,0 +1,16 @@
+.MeetCards--container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 4rem;
+    column-gap: 4rem;
+    &:hover {
+        .Card {
+            opacity: 0.5;
+            &:hover {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+    }
+}

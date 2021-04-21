@@ -1,0 +1,29 @@
+.MeetCard{
+    display: flex;
+    &--Header{
+        display: flex;
+        >div:first-child{
+            margin-right: 1rem;
+        }
+    }
+    h2{
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+    .Time{
+        font-size: 1rem;
+        line-height: 1;
+        font-weight: 300;
+    }
+    &--dateInfo{
+        font-size: .9rem;
+        color: var(--gris2);
+    }
+    &--title{
+        h2{
+            font-size: 1.5rem;
+            color: var(--negro);
+            margin: 1rem 0;
+        }
+    }
+}

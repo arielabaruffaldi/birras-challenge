@@ -1,7 +1,7 @@
 .Option {
     list-style: none;
     a {
-        padding: 0.75rem 0rem 0.75rem 0.5rem;
+        padding: 0.75rem 0rem;
         display: flex;
         align-items: center;
         border-radius: 3px;
@@ -10,6 +10,12 @@
         letter-spacing: 0.3px;
         text-decoration: none;
         color: var(--aside-text);
+        &.active{
+            color: var(--titles-color);
+            svg{
+                fill: var(--titles-color)
+            }
+        }
         svg{
             fill: var(--aside-text);
             margin-right: 0.75rem;

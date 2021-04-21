@@ -1,0 +1,46 @@
+.ProvicionesCard{
+    width: 95%;
+    &--Header{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 100%;
+    }
+    &--subtitle{
+        font-size: 1rem;
+        color: var(--gris2);
+        font-weight: 600;
+    }
+    &--dateInfo{
+        font-size: .9rem;
+        color: var(--gris2);
+        font-weight: 600;
+        margin-left: 1rem;
+    }
+    &--title{
+        h2{
+            font-size: 2.5rem;
+            color: var(--negro);
+            margin: 1rem 0;
+            font-weight: 300;
+        }
+    }
+    &--Footer{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .Proviciones--WeatherInfo{
+        display: flex;
+        svg{
+            width: 2.5rem;
+            height: 2.5rem;
+            fill: var(gris-2)
+        }
+    }
+   
+    :global(.Main){
+        right: 1rem;
+        z-index: 999;
+    }
+}

@@ -1,0 +1,12 @@
+.WeatherInfo {
+    margin-right: 0;
+    width: fit-content;
+    .Temperature {
+        h3{
+            font-size: 4rem;
+            font-weight: 300;
+            margin: 0;
+            line-height: 1;
+        }
+    }
+}

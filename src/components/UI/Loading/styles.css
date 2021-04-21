@@ -2,14 +2,14 @@
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.952);
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     display: grid;
     justify-items: center;
     align-items: center;
-    z-index: 101;
+    z-index: 9999;
   }
   .lds-roller {
     display: inline-block;

@@ -1,0 +1,58 @@
+.ToolTip {
+    position: absolute;
+    right: 1.5rem;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 300ms all;
+    border-radius: 50px;
+    svg {
+        fill: var(--color-principal);
+    }
+    &:hover {
+        box-shadow: 3px 4px 20px -6px rgba(0, 0, 0, 0.27);
+    }
+    &--content {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        background: white;
+        border-radius: 20px;
+        padding: 3rem 1rem 2rem;
+        box-shadow: 3px 0px 16px -9px rgba(0,0,0,0.75);
+        border: 1px solid rgba(6, 74, 111, 0.063);
+        z-index: 999;
+        > div {
+            padding: 0.5rem 0rem;
+            display: flex;
+            padding: 0.5rem 3rem;
+            border-radius: 8px;
+            svg {
+                margin-right: 1rem;
+            }
+        }
+        .ToolTip--closeIcon {
+            position: absolute;
+            right: 1rem;
+            top: 0.5rem;
+            cursor: pointer;
+        }
+        .ToolTip--item {
+            cursor: pointer;
+        }
+    }
+    &-Editar {
+        background: var(--color-principal);
+        span {
+            color: var(--blanco);
+        }
+    }
+    &-Eliminar {
+        span {
+            // color: var(--cerrar-sesion);
+        }
+    }
+}

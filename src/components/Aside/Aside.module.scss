@@ -1,9 +1,9 @@
-@import "./../../utils/styles/colors.scss";
+@import "./../../utils/styles/variables.scss";
 
 .Aside {
     animation: fadeIn 0.5s ease;
     flex-basis: 25%;
-    max-width: 20%;
+    max-width: 18%;
     position: relative;
     box-sizing: border-box;
     padding: 1rem 2rem;
@@ -12,14 +12,12 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    z-index: 1111;
     border-radius: 20px;
-    // box-shadow: 7px 3px 65px 4px #3333331f;
     margin: 5vh 1rem 5vh 4rem;
 
     &Session {
         margin-top: 1rem;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
         display: flex;
         align-items: center;
     }
@@ -33,6 +31,9 @@
         justify-content: center;
         align-items: center;
         margin-right: 0.75em;
+        svg {
+            fill: var(--color-principal);
+        }
     }
     &UserData {
         display: flex;
@@ -42,12 +43,12 @@
             font-weight: 700;
             margin: 0;
             line-height: 1;
-            margin-bottom: .1rem;
+            margin-bottom: 0.1rem;
         }
         span {
             font-size: 0.8rem;
             line-height: 1;
-            font-weight: 500;
+            font-weight: 400;
         }
     }
 
@@ -55,16 +56,18 @@
         margin-top: auto;
         label {
             color: var(--cerrar-sesion);
+            display: flex;
+            align-items: center;
             cursor: pointer;
             font-weight: 400;
-            font-size: .9rem;
+            font-size: 0.9rem;
             padding: 0.75em 0em 0.75em 0.5em;
-            display: block;
         }
         svg {
             margin-right: 0.75em;
             max-width: 20px;
             max-height: 20px;
+            fill: var(--cerrar-sesion);
         }
     }
 }

@@ -1,24 +1,20 @@
 import React from 'react';
 import styles from "./WeatherData.module.scss";
+import TextBlock from '../UI/TextBlock/TextBlock';
+import WeatherInfo from "./../WeatherInfo/WeatherInfo";
 
-function WeatherData({ temp, humidity, wind }) {
+function WeatherData({ temp, humidity, wind, min, max }) {
 
     return (
         <div className={styles.WeatherData}>
-
-            <div>
-                <span>aca va el icono</span>
-                <h3 className={styles.Temperature}>{temp}º </h3>
+            <WeatherInfo priority={3} temp={temp}></WeatherInfo>
+            <div className={styles['TextBlock--container']}>
+                <TextBlock customClass={styles.WeatherDataItem} title={"Humedad"}>{humidity}% </TextBlock>
+                <TextBlock customClass={styles.Wind} title={"Viento"}> {wind} </TextBlock >
             </div>
-
-            <div className={styles.ExtraInfo}>
-                <p> humedad </p>
-                <p>{humidity}%</p>
-            </div>
-
-            <div className={styles.Wind}>
-                <p>viento</p>
-                <p>{wind} m/s</p>
+            <div className={styles['TextBlock--container']}>
+                <TextBlock title={"Mínima"}>{min}</TextBlock>
+                <TextBlock title={"Máxima"}>{max}</TextBlock>
             </div>
         </div>
     )

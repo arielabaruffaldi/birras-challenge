@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: $font;
   background: var(--body-bg);
+  color: var(--negro)
 }
 
 * {
@@ -16,11 +17,15 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color-principal);
   border-radius: 10px;
+}
+
+.react-datepicker-wrapper{
+  width: 100%;
 }
 
 @media screen and (max-width: 720px) {

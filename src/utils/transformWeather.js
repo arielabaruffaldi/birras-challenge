@@ -1,9 +1,11 @@
+import { WiDaySunny } from "react-icons/wi";
+import React from "react";
 
-
-const transformWeather = api_data => {
-    switch(api_data){
-        case 'Clear'
+const TransformedWeather = (api_data, width) => {
+    switch (api_data) {
+        case 'Clear':
+            return <WiDaySunny size={width} color="#01A3FF" />
     }
 }
 
-export default transformWeather;
+export default TransformedWeather;

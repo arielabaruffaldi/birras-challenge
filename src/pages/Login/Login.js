@@ -1,48 +1,18 @@
 import React, { useState } from 'react';
-import { loginRequest } from '../../store/actions';
-import { useSelector, useDispatch } from "react-redux";
+import styles from "./Login.module.scss";
+import { BiBeer } from "react-icons/bi";
+import FormLogin from '../../components/FormLogin/FormLogin';
 
 const Login = (props) => {
-    const [values, setValues] = useState({
-        email: '',
-        password: ''
-    })
-    const dispatch = useDispatch();
 
-    const state = useSelector((state) => state.general);
-    const handleInput = event => {
-        setValues({
-            ...values,
-            [event.target.name]: event.target.value
-        })
-    }
-
-    const handleSubmit = event => {
-        event.preventDefault();
-        dispatch(loginRequest(values));
-        props.history.push('/');
-    }
     return (
-        <>
-            <form onSubmit={handleSubmit}>
-                <input
-                    name="email"
-                    className="input"
-                    type="email"
-                    placeholder="Contraseña"
-                    onChange={handleInput}
-                />
-                <input
-                    name="password"
-                    className="input"
-                    type="password"
-                    placeholder="Contraseña"
-                    onChange={handleInput}
-                />
-                <button className="button">Iniciar sesión</button>
-            </form>
-            <p>{state.error && state.errorMessage}</p>
-        </>
+        <section className={styles['Login']}>
+            <header>
+                <BiBeer size={"3rem"} color={"#01A3FF"} />
+                <h1>birras santander.</h1>
+            </header>
+            <FormLogin></FormLogin>
+        </section>
     )
 }
 

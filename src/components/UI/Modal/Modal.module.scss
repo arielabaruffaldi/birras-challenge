@@ -1,0 +1,62 @@
+
+@import "./../../../utils/styles/animations.scss";
+
+.Modal--container {
+  top: 0;
+  left: 0;
+  z-index: 30;
+  display: block;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.5s cubic-bezier(0.165, 0.2, 0.44, 1) forwards;
+}
+.container-out {
+  animation: fadeOut 0.4s 0.2s cubic-bezier(0.165, 0.2, 0.44, 1) forwards;
+}
+.Modal--wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 31;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  height: 100%;
+}
+
+.Modal--content {
+  background-color: var(--gris);
+  border-radius: 7px;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 40;
+  transform: scale(0);
+  animation: scaleIn 0.3s 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  /* overflow: scroll; */
+  max-height: 90vh;
+  height: fit-content;
+  width: 70%;
+}
+.out {
+  animation: scaleOut 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+.Modal--close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  >span{
+      cursor: pointer;
+  }
+}
+
+.Modal--close .close {
+  max-width: 18px;
+  max-height: 18px;
+  cursor: pointer;
+}

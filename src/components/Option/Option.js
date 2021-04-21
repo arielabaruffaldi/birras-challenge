@@ -5,10 +5,8 @@ import styles from "./Option.module.scss";
 const option = ({ href, icon, name }) => {
   return (
     <li className={styles.Option}>
-      <NavLink exact to={href}>
-        <svg>
-          <use href={icon}></use>
-        </svg>
+      <NavLink exact to={href} activeClassName={styles.active}>
+        {icon}
         {name}
       </NavLink>
     </li>

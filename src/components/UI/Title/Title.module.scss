@@ -1,17 +1,21 @@
-.Title{
+.Title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2em;
-    margin-left: 2rem;
-    font-size: .7rem;
+    font-size: 0.7rem;
     position: relative;
     width: fit-content;
-    h1, h2, h3, h4{
-        margin-bottom: .3rem;
+    h1,
+    h2,
+    h3,
+    h4 {
         font-weight: 600;
+        margin: 0;
     }
-    &::after{
+    &.hasMargin {
+        margin: 3rem 0 1.5rem 2rem
+    }
+    &.underlined::after {
         content: "";
         position: absolute;
         height: 4px;
@@ -19,6 +23,6 @@
         bottom: 0;
         background: var(--azul);
         border-radius: 50px;
-        clip-path: inset(0px 3.5rem 0 0.8rem round 5px)
+        clip-path: inset(0px 60% 0 0.8rem round 5px);
     }
 }

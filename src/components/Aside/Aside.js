@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import sprite from "./../../assets/icons/iconsprite.svg";
-import userIcon from "./../../assets/icons/user.svg";
-import { getUser } from "./../../store/actions/";
+import { getUserByMail, logOutUser } from "./../../store/actions/";
 import Option from "./../Option/Option";
+//https://react-icons.github.io/react-icons/icons?name=bi
+import { BiHomeAlt, BiBeer, BiSun, BiUserPlus, BiArrowBack } from "react-icons/bi";
 
 import styles from "./Aside.module.scss";
 
@@ -11,31 +11,31 @@ const optionsList = [
     {
         name: "Home",
         href: "/",
-        icon: `${sprite}#home`,
+        Icon: <BiHomeAlt size={"2rem"} color={"#01A3FF"} />,
         scope: ["admin", "user"],
     },
     {
-        name: "Provisiones",
-        href: "/provisiones",
-        icon: `${sprite}#transacciones`,
+        name: "Proviciones",
+        href: "/proviciones",
+        Icon: <BiBeer size={"2rem"} color={"#01A3FF"} />,
         scope: ["admin"],
     },
     {
-        name: "Temperatura",
-        href: "/temperatura",
-        icon: `${sprite}#usuarios`,
+        name: "Clima",
+        href: "/clima",
+        Icon: <BiSun size={"2rem"} color={"#01A3FF"} />,
         scope: ["admin", "user"],
     },
     {
-        name: "Meet up",
+        name: "Meet",
         href: "/meet",
-        icon: `${sprite}#usuarios`,
+        Icon: <BiUserPlus size={"2rem"} color={"#01A3FF"} />,
         scope: ["admin"],
     },
     {
-        name: "Meet up",
+        name: "Meet",
         href: "/meet/:id",
-        icon: `${sprite}#transacciones`,
+        Icon: <BiUserPlus size={"2rem"} color={"#01A3FF"} />,
         scope: ["user"],
     }
 ];
@@ -43,39 +43,39 @@ const optionsList = [
 const Aside = () => {
     const state = useSelector((state) => state.general);
     const dispatch = useDispatch();
+
     useEffect(() => {
-        dispatch(getUser())
+        dispatch(getUserByMail())
     }, [])
-    console.log("entra")
-    console.log(state.userData.role)
+    
     return (
         <aside className={styles.Aside}>
             <div className={styles.AsideSession}>
                 <div className={styles.AsideUserIcon}>
-                    <img src={userIcon} alt="Avatar usuario" />
+                    <BiBeer size={"4rem"} />
                 </div>
                 <div className={styles.AsideUserData}>
-                    <h3>Hola,</h3>
-                    <span>{state.userData.name}</span>
+                    <h3>{state.userData.name}</h3>
+                    <span>{state.userData.lastName}</span>
                 </div>
             </div>
-            <ul className={styles.OptionsContainer}>
-                {optionsList.map((option, value) =>
-                    option.scope.includes(state.userData.role) ? (
-                        <Option
-                            key={value}
-                            name={option.name}
-                            href={option.href}
-                            icon={option.icon}
-                        />
-                    ) : null
-                )}
-            </ul>
-            <div className={styles.AsideFooter}>
+            <nav>
+                <ul className={styles.OptionsContainer}>
+                    {optionsList.map((option, value) =>
+                        option.scope.includes(state.userData.role) ? (
+                            <Option
+                                key={value}
+                                name={option.name}
+                                href={option.href}
+                                icon={option.Icon}
+                            />
+                        ) : null
+                    )}
+                </ul>
+            </nav>
+            <div className={styles.AsideFooter} onClick={dispatch(logOutUser)}>
                 <label>
-                    <svg className="">
-                        <use href={sprite + "#cerrarsesion"}></use>
-                    </svg>
+                    <BiArrowBack/>
                     Cerrar sesión
                 </label>
             </div>

@@ -7,21 +7,23 @@ body {
   --cerrar-sesion: var(--rosa);
   --main-background: var(--blanco);
   --weather-data-bg: var(--blanco);
+  --color-principal: var(--azul);
+  --color-error: var(--rojo);
+  --color-principal-opacidad: var(--azul2);
   --titles-color: var(--azul);
-  --button-principal: var(--success);
-  --table-header-text: var(--negro);
-  --input-border: var(--gris);
-  --arrow: var(--gris5);
-  --select-selected: var(--gris5);
-  --user-icon-background: var(--gris8);
   --background-color-login: var(--loginBackground);    
   --body-bg: var(--gris);
 
   --azul: #01A3FF;
+  --azul2: #7ac7f3;
   --blanco: #fff;
   --negro: #333;
   --gris: #F5F6FA;
   --gris2:rgb(151, 151, 151);
   --rosa: rgb(245, 19, 141);
+  --rojo: rgb(252, 78, 78);
+  --naranja: rgb(252, 141, 37);
+  --verde: rgb(46, 211, 101);
 
+  --font:'Poppins', sans-serif;
 }

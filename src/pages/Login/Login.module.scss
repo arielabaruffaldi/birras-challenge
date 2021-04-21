@@ -1,0 +1,13 @@
+.Login {
+    min-height: 100vh;
+    width: 100%;
+    header {
+        display: flex;
+        align-items: center;
+        padding: 2rem 6rem 0;
+        h1{
+            margin-left: 1rem;
+            color: var(--negro);
+        }
+    }
+}
