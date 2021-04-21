@@ -1,3 +1,6 @@
+
+@import "./../../utils/styles/media.scss";
+
 .Proviciones--container{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -16,5 +19,8 @@
                 opacity: 1;
             }
         }
+    }
+    @include respond(phone){
+        width: 100%;
     }
 }

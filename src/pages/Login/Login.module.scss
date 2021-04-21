@@ -1,3 +1,5 @@
+@import "./../../utils/styles/media.scss";
+
 .Login {
     min-height: 100vh;
     width: 100%;
@@ -8,6 +10,9 @@
         h1{
             margin-left: 1rem;
             color: var(--negro);
+            @include respond(phone){
+                line-height: 1;
+            }
         }
     }
 }

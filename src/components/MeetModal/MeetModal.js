@@ -20,7 +20,7 @@ const MeetModal = () => {
 
     const dispatch = useDispatch();
     const stateWeather = useSelector((state) => state.weather);
-
+ 
     const handleSubmit = event => {
         event.preventDefault();
         let participantsArray = participants.split(',');

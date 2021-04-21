@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Link from './../Link/Link';
 import styles from './NavMobile.module.scss';
-import {  useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { getUserByMail, logOutUser } from "./../../store/actions/";
+import { BiArrowBack } from "react-icons/bi";
 
 const optionsList = [
     {
@@ -73,7 +74,7 @@ const NavMobile = () => {
                             {optionsList.map((link, index) => {
                                 return (
                                     <>
-                                    {console.log(state.userData)}
+                                        {console.log(state.userData)}
                                         {link.scope.includes(state.userData.role) &&
                                             <li key={index} className={`${isOpen ? styles["navLinkOpen"] : ""}`}>
                                                 <Link text={link.name} href={link.href} onClick={() => setIsOpen(!isOpen)}></Link>
@@ -81,7 +82,14 @@ const NavMobile = () => {
                                     </>)
                             })}
                         </ul>}
+                    <div className={styles.AsideFooter} onClick={dispatch(logOutUser)}>
+                        <label>
+                            <BiArrowBack />
+                    Cerrar sesión
+                </label>
+                    </div>
                 </nav>
+
             </header>
 
         </>

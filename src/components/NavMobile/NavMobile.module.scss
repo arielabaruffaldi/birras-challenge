@@ -161,5 +161,15 @@
                 }
             }
         }
+        label{
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            width: 100%;
+            color: var(--cerrar-sesion);
+            svg{
+                margin-right: .4rem;
+            }
+        }
     }
 }

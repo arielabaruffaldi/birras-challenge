@@ -1,12 +1,27 @@
+@import "./../../utils/styles/media.scss";
+
 .WeatherInfo {
     margin-right: 0;
     width: fit-content;
+    transition: 400ms all;
+    justify-content: center;
     .Temperature {
-        h3{
+        h3 {
             font-size: 4rem;
             font-weight: 300;
             margin: 0;
             line-height: 1;
         }
+    }
+    &:hover {
+        transition: 400ms all;
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+    @include respond(phone){
+        grid-column: 1 / 3;
+        grid-row: 1;
+        width: 100%;
+        display: flex;
     }
 }

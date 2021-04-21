@@ -11,13 +11,15 @@ const ProvicionesCard = ({
     participants,
     temp
 }) => {
+    const packs = parseInt(provisions / 6);
+    const latas = provisions % 6;
     return (
         <div className={`${styles.ProvicionesCard}`}>
             <div className={styles['ProvicionesCard--Header']}>
                 <Title tag={"span"} customClass={styles['ProvicionesCard--subtitle']} title={description}></Title>
                 <Title tag={"span"} customClass={styles['ProvicionesCard--dateInfo']} title={date}></Title>
             </div>
-            <Title customClass={styles['ProvicionesCard--title']} title={`${parseInt(provisions / 6)} packs, ${provisions % 6} latas TOTAL: ${provisions}`}></Title>
+            <Title customClass={styles['ProvicionesCard--title']} title={`${packs > 0 ? `${packs} packs` : "" } ${latas > 0 ? `y ${latas} latas` : ""}`}></Title>
             <div className={styles['ProvicionesCard--Header']}>
                 <Participants participants={participants} />
                 <WeatherInfo customClass={styles['Proviciones--WeatherInfo']} temp={temp}></WeatherInfo>

@@ -1,3 +1,5 @@
+@import "./../../../utils/styles/media.scss";
+
 .Input {
     display: flex;
     flex-direction: column;
@@ -28,6 +30,9 @@
             transition: 400ms all;
             -webkit-transform: scale(1.05);
             transform: scale(1.05);
+            @include respond(phone){
+                transform: none;
+            }
         }
     }
    
