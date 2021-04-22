@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BiDotsVerticalRounded, BiCalendarEdit, BiXCircle, BiX} from "react-icons/bi";
+import { BiDotsVerticalRounded, BiX} from "react-icons/bi";
 import styles from "./Tooltip.module.scss";
 
 const ToolTip = ({ editar, eliminar }) => {

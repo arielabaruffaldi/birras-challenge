@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { getUser } from "./../../store/actions/";
 import Title from '../../components/UI/Title/Title';
 import Search from "./../../components/Search/Search"
 import WeatherInfo from "./../../components/WeatherInfo/WeatherInfo"
@@ -19,7 +18,7 @@ const Home = () => {
 
     useEffect(() => {
         !stateWeather.weatherData.name && dispatch(getWeather());
-    }, [])
+    }, [stateWeather.weatherData, dispatch])
 
     const newMeetModal = state.newMeetModalOpen && (
         <Modal typeModal="newMeet">
@@ -37,7 +36,7 @@ const Home = () => {
             <section className={styles['Home']}>
 
                 <div>
-                    <Title title={'Clima'} priority={2}></Title>
+                    <Title hasMargin title={'Clima'} priority={2}></Title>
                     {stateWeather.weatherData.name && <WeatherInfo
                         city={stateWeather.weatherData.name}
                         temp={stateWeather.weatherData?.data?.temp}
@@ -47,7 +46,7 @@ const Home = () => {
                     />}
                 </div>
                 <div>
-                    <Title title={'Agregar meet'} priority={2}></Title>
+                    <Title hasMargin title={'Agregar meet'} priority={2}></Title>
                     <Card
                         customClass={`${styles['Home--Card']}`}
                         addCard

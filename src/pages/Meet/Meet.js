@@ -25,7 +25,7 @@ const Meet = () => {
     );
     useEffect(() => {
         !stateWeather.weatherData.data && dispatch(getWeather())
-    }, []);
+    }, [stateWeather.weatherData, dispatch]);
 
     return (
         <>

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Participants.module.scss";
 import Avatar from '../UI/Avatar/Avatar';
 import Title from "../UI/Title/Title";
 
 const Participants = ({ participants }) => {
-    const participantes = participants.length > 6 && participants.slice(0, 6);
+    const participantes = participants.length > 6 ? participants.slice(0, 6) : participants;
     return (
         <div className={styles['Participants--Container']}>
             <ul>

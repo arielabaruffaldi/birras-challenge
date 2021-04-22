@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from "./Modal.module.scss";
 import { setModalOpen, setError } from "./../../../store/actions/GeneralActions";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { BiX } from "react-icons/bi";
 
 const Modal = (props) => {

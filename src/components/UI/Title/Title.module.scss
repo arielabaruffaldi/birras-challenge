@@ -1,3 +1,5 @@
+@import "./../../../utils/styles/media.scss";
+
 .Title {
     display: flex;
     justify-content: space-between;
@@ -13,7 +15,7 @@
         margin: 0;
     }
     &.hasMargin {
-        margin: 3rem 0 1.5rem 2rem
+        margin: 3rem 0 1.5rem 2rem;
     }
     &.underlined::after {
         content: "";

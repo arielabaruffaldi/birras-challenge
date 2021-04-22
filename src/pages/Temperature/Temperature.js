@@ -11,7 +11,7 @@ const Temperature = () => {
     const state = useSelector((state) => state.weather);
     useEffect(() => {
         !state.weatherData.name && dispatch(getWeather());
-    }, [])
+    }, [state.weatherData, dispatch])
     return (
 
         <section className={styles.Temperature}>

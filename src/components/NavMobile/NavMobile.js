@@ -54,8 +54,8 @@ const NavMobile = () => {
     });
 
     useEffect(() => {
-        state.userData && dispatch(getUserByMail())
-    }, [])
+        dispatch(getUserByMail())
+    }, [dispatch])
 
     return (
         <>

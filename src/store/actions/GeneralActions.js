@@ -1,5 +1,4 @@
 import * as actionTypes from "./../types";
-import axios from "axios";
 import { userData } from "./../../utils/MOCK_DATA";
 import { mailExists } from "./../../utils/local-storage"
 

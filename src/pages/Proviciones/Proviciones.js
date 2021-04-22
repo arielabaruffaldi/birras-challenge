@@ -1,20 +1,17 @@
 import React from 'react';
 import Title from '../../components/UI/Title/Title';
 import Card from '../../components/UI/Card/Card';
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import ProvicionesCard from '../../components/ProvicionesCard/ProvicionesCard';
 import styles from './Proviciones.module.scss';
 import Search from '../../components/Search/Search';
 
 const Proviciones = () => {
-    const dispatch = useDispatch();
-    const state = useSelector((state) => state.general);
     const stateMeet = useSelector((state) => state.meet);
     const stateWeather = useSelector((state) => state.weather);
 
-
     return (
-        <section customClass={styles['Proviciones']}>
+        <section className={styles['Proviciones']}>
             <Search />
             {stateMeet.meets.length ? <Title hasMargin underlined title={"Proviciones pendientes"} /> : null}
             <main className={styles['Proviciones--container']}>

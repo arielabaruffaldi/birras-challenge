@@ -21,7 +21,6 @@ export const getWeather = () => async (
                     name: response.data.name,
                     data: {
                         humidity: response.data.main.humidity,
-                        temp: response.data.main.temp,
                         temp: Math.round(response.data.main.temp),
                         temp_min: Math.round(response.data.main.temp_min),
                         temp_max: Math.round(response.data.main.temp_max)

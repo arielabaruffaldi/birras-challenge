@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from "./Login.module.scss";
 import { BiBeer } from "react-icons/bi";
 import FormLogin from '../../components/FormLogin/FormLogin';

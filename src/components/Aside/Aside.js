@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserByMail, logOutUser } from "./../../store/actions/";
 import Option from "./../Option/Option";
@@ -46,7 +46,7 @@ const Aside = () => {
 
     useEffect(() => {
         dispatch(getUserByMail())
-    }, [])
+    }, [dispatch])
     
     return (
         <aside className={styles.Aside}>

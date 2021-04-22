@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import './App.scss'
 
 import Aside from "./components/Aside/Aside";
@@ -14,7 +14,7 @@ import Proviciones from "./pages/Proviciones/Proviciones";
 import NavMobile from "./components/NavMobile/NavMobile";
 
 // TODO:
-//CAMBIAR ICONOS
+//traer los iconos del weather dinamicamente
 
 function App() {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });

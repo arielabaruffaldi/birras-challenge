@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Input from "../UI/Input/Input";
 import { useInput } from './../../utils/useInput';
@@ -17,7 +17,6 @@ const MeetModal = () => {
     const { value: hourEnd, bind: bindHourEnd } = useInput('')
     const { value: participants, bind: bindParticipants } = useInput('')
     const [date, setDate] = useState(new Date());
-    const [error, setError] = useState(false);
     const dispatch = useDispatch();
     const stateWeather = useSelector((state) => state.weather);
 
