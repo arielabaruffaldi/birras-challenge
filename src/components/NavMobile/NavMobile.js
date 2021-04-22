@@ -74,7 +74,6 @@ const NavMobile = () => {
                             {optionsList.map((link, index) => {
                                 return (
                                     <>
-                                        {console.log(state.userData)}
                                         {link.scope.includes(state.userData.role) &&
                                             <li key={index} className={`${isOpen ? styles["navLinkOpen"] : ""}`}>
                                                 <Link text={link.name} href={link.href} onClick={() => setIsOpen(!isOpen)}></Link>

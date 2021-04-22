@@ -4,12 +4,12 @@ import Input from "../UI/Input/Input";
 import { useInput } from './../../utils/useInput';
 import TimeField from 'react-simple-timefield';
 import { setMeet, setLoading } from '../../store/actions';
-import {beersPerPerson} from "./../../utils/provisions";
+import { beersPerPerson } from "./../../utils/provisions";
 import styles from "./MeetModal.module.scss";
 import Button from "../UI/Button/Button";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {dateFormater} from "../../utils/formaters";
+import { dateFormater } from "../../utils/formaters";
 
 const MeetModal = () => {
     const { value: title, bind: bindTitle } = useInput('')
@@ -17,15 +17,14 @@ const MeetModal = () => {
     const { value: hourEnd, bind: bindHourEnd } = useInput('')
     const { value: participants, bind: bindParticipants } = useInput('')
     const [date, setDate] = useState(new Date());
-
+    const [error, setError] = useState(false);
     const dispatch = useDispatch();
     const stateWeather = useSelector((state) => state.weather);
- 
+
     const handleSubmit = event => {
         event.preventDefault();
         let participantsArray = participants.split(',');
         dispatch(setLoading(true));
-
         let beers = beersPerPerson(stateWeather.weatherData.data.temp, participantsArray.length);
         dispatch(setMeet({
             title: title,
@@ -54,7 +53,7 @@ const MeetModal = () => {
                     <Input
                         tag={"input"}
                         name="participants"
-                        placeholder="Añadir participantes"
+                        placeholder="Añadir participantes separados por coma"
                         customClass={styles['MeetModal--Input']}
                         {...bindParticipants}
                     />
@@ -75,6 +74,7 @@ const MeetModal = () => {
                                 width: "50%",
                             }}
                             {...bindHourStart}
+                            value="09:00"
                         />
                         <TimeField
                             name="hour"
@@ -84,6 +84,7 @@ const MeetModal = () => {
                                 width: "50%",
                             }}
                             {...bindHourEnd}
+                            value="10:00"
                         />
                     </div>
                 </div>

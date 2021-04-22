@@ -4,7 +4,6 @@ import TransformedWeather from "./../../utils/transformWeather";
 import styles from "./WeatherInfo.module.scss";
 
 const WeatherInfo = ({ city, priorityCity, temp, priority, customClass, colorSvg = "#01A3FF" }) => {
-    console.log("city", city)
     return (
         <div className={`${styles.WeatherInfo} ${customClass ? customClass : ""}`}>
             {/* TODO: TRAER DINAMICAMENTE LOS ICONOS */}

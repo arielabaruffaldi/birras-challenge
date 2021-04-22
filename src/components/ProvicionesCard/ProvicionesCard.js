@@ -19,7 +19,7 @@ const ProvicionesCard = ({
                 <Title tag={"span"} customClass={styles['ProvicionesCard--subtitle']} title={description}></Title>
                 <Title tag={"span"} customClass={styles['ProvicionesCard--dateInfo']} title={date}></Title>
             </div>
-            <Title customClass={styles['ProvicionesCard--title']} title={`${packs > 0 ? `${packs} packs` : "" } ${latas > 0 ? `y ${latas} latas` : ""}`}></Title>
+            <Title customClass={styles['ProvicionesCard--title']} title={`${packs > 0 ? `${packs} packs` : "" } ${latas > 0 ? ` ${latas} latas` : ""}`}></Title>
             <div className={styles['ProvicionesCard--Header']}>
                 <Participants participants={participants} />
                 <WeatherInfo customClass={styles['Proviciones--WeatherInfo']} temp={temp}></WeatherInfo>

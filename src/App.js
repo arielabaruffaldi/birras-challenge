@@ -14,10 +14,7 @@ import Proviciones from "./pages/Proviciones/Proviciones";
 import NavMobile from "./components/NavMobile/NavMobile";
 
 // TODO:
-//SACAR TODOS LOS CONNECT Y REEMPLAZARLOS POR HOOKS
 //CAMBIAR ICONOS
-//AGREGAR PROPTYPES
-//AGREGAR VALIDACION CONTRASEÑA LOGIN
 
 function App() {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
