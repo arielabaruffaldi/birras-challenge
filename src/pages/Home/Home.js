@@ -27,7 +27,7 @@ const Home = () => {
             />
         </Modal>
     );
-
+    console.log(state.userData.role)
     return (
         <>
             {newMeetModal}
@@ -45,7 +45,7 @@ const Home = () => {
                         colorSvg={"var(--blanco)"}
                     />}
                 </div>
-                <div>
+                {state.userData.role === "admin" && <div>
                     <Title hasMargin title={'Agregar meet'} priority={2}></Title>
                     <Card
                         customClass={`${styles['Home--Card']}`}
@@ -54,7 +54,7 @@ const Home = () => {
                             () => dispatch(setModalOpen(true, "newMeet"))
                         }>
                     </Card>
-                </div>
+                </div>}
 
                 {stateMeet.meets.length ?
                     stateMeet.meets.map((meet, index) => (
