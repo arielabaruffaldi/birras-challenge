@@ -1,7 +1,27 @@
-.Participants--Container{
+@import "./../../utils/styles/media.scss";
+
+.Participants--Container {
     display: flex;
     flex-wrap: wrap;
-    div{
-        margin-right: .3rem;
+    flex-direction: column;
+    ul{
+        padding: 0;
+        display: flex;
+        margin-top: 0;
+        li{
+            list-style: none;
+            margin-right: .3rem;
+        }
+    }
+    .Participants--detail {
+        span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gris2);
+            @include respond(phone){
+                margin-left: 0;
+            }
+        }
+    
     }
 }

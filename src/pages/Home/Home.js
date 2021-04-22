@@ -35,24 +35,28 @@ const Home = () => {
             <Search />
 
             <section className={styles['Home']}>
-                <Title title={'Clima'} priority={2}></Title>
-                <Title title={'Agregar meet'} priority={2}></Title>
 
-                {stateWeather.weatherData.name && <WeatherInfo
-                    city={stateWeather.weatherData.name}
-                    temp={stateWeather.weatherData?.data?.temp}
-                    priority={3}
-                    customClass={styles['Home-WeatherInfo']}
-                    colorSvg={"var(--blanco)"}
-                />}
+                <div>
+                    <Title title={'Clima'} priority={2}></Title>
+                    {stateWeather.weatherData.name && <WeatherInfo
+                        city={stateWeather.weatherData.name}
+                        temp={stateWeather.weatherData?.data?.temp}
+                        priority={3}
+                        customClass={styles['Home-WeatherInfo']}
+                        colorSvg={"var(--blanco)"}
+                    />}
+                </div>
+                <div>
+                    <Title title={'Agregar meet'} priority={2}></Title>
+                    <Card
+                        customClass={`${styles['Home--Card']}`}
+                        addCard
+                        action={
+                            () => dispatch(setModalOpen(true, "newMeet"))
+                        }>
+                    </Card>
+                </div>
 
-                <Card
-                    customClass={`${styles['Home--Card']}`}
-                    addCard
-                    action={
-                        () => dispatch(setModalOpen(true, "newMeet"))
-                    }>
-                </Card>
                 {stateMeet.meets.length ?
                     stateMeet.meets.map((meet, index) => (
                         <>
