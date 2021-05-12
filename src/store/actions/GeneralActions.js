@@ -19,26 +19,16 @@ export const setLoading = (value) => {
 export const loginRequest = payload => (dispatch) => {
     dispatch(setLoading(true))
     const user = userData.filter(user => user.email === payload.email);
-    if (user.length && payload.password === "santander") {
-        localStorage.setItem("birras-auth", true);
-        localStorage.setItem("user-mail", payload.email);
-        setTimeout(() => {
-            dispatch(setLoading(false))
-        }, 1000)
 
-        dispatch({
-            type: actionTypes.LOGIN_REQUEST,
-            payload,
-        });
-        dispatch(getUserByMail(payload.email))
-    } else {
-        dispatch(
-            setError({
-                error: true,
-                errorMessage: "Ocurrió un error, intentá nuevamente",
-            })
-        );
-    }
+    setTimeout(() => {
+        dispatch(setLoading(false))
+    }, 1000)
+
+    dispatch({
+        type: actionTypes.LOGIN_REQUEST,
+        payload,
+    });
+    dispatch(getUserByMail(payload.email))
 };
 
 export const logOutUser = () => async (dispatch) => {
@@ -48,15 +38,16 @@ export const logOutUser = () => async (dispatch) => {
 };
 
 export const getUserByMail = (email) => (dispatch) => {
+    console.log(email)
     let emailToFetch = mailExists() || email;
     const user = userData.filter(user => user.email === emailToFetch);
     dispatch({
         type: actionTypes.SET_USER_DATA,
         payload: {
-            name: user[0].name,
-            lastName: user[0].lastName,
-            role: user[0].role,
-            email: user[0].email
+            name: "John",
+            lastName: "",
+            role: "admin",
+            email: email
         }
     })
 };
